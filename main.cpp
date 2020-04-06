@@ -91,7 +91,23 @@ int Nodo::Obtienedato()
     return(this->dato);
 }
 
-
+void LDE::InsertarF(int x)
+{//Necesitamos ver si es el unico dato, si lo es inserta el primero
+	if(Inicio==NULL){
+		Inicio=new Nodo(x); //Agrega el inicio y termina el programa
+		Fin=Inicio;
+	}else{
+			//Si hay al menos un dato debe agregarlo
+			Nodo *ayuda=new Nodo(x); //Crea dato nodo
+			Fin->Asignasig(ayuda); //el ultimo dato asignara a su nodo sig que apunte a al dato creado
+			Nodo *b=Fin; //Obtiene la direccion actual del fin
+			Fin=ayuda; //fin se convierte el el ultimo valor ingresado
+			Fin->Asignaant(b); //el nodo anterior obtiene la direccion de antiguo fin
+		
+		
+	}
+	
+}
 
 
 
